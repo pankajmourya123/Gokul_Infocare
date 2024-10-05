@@ -1,0 +1,20 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "server.js",   
+        "use": "@vercel/node" 
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api/(.*)",    
+        "dest": "/server.js"    
+      }
+    ],
+    "env": {
+      "PORT": 6000,
+      "MONGO_URI":"mongodb+srv://mongo:mongo@cluster0.ttetl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+    }
+  }
+  
