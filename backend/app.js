@@ -16,5 +16,7 @@ const corsOptions = {
 app.use("/api/users", user);
 
 
+
+
 app.use(errorMiddleware);
 export default app;
