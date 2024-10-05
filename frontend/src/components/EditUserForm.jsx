@@ -78,7 +78,7 @@ const EditUserForm = ({ user, onUserUpdated }) => {
     e.preventDefault();
 
     try {
-      await axios.put(`http://localhost:7000/api/users/${user._id}`, userData);
+      await axios.put(`https://gokul-infocare.onrender.com/api/users/${user._id}`, userData);
       onUserUpdated();
       toast.success('User updated successfully!');
     } catch (err) {

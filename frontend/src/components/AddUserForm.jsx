@@ -115,7 +115,7 @@ const AddUserForm = ({ onUserAdded }) => {
     }
 
     try {
-      await axios.post('http://localhost:7000/api/users/create', userData);
+      await axios.post('https://gokul-infocare.onrender.com/api/users/create', userData);
       onUserAdded();
 
       setUserData({ firstName: '', lastName: '', phoneNumber: '', email: '', address: '' });

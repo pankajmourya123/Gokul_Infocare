@@ -54,7 +54,7 @@ const App = () => {
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get('http://localhost:7000/api/users');
+      const response = await axios.get('https://gokul-infocare.onrender.com/api/users');
       setUsers(response.data);
     } catch (error) {
       toast.error('Error fetching users');
@@ -75,7 +75,7 @@ const App = () => {
   const deleteUser = async (userId) => {
     if (window.confirm('Are you sure you want to delete this user?')) {
       try {
-        await axios.delete(`http://localhost:7000/api/users/${userId}`);
+        await axios.delete(`https://gokul-infocare.onrender.com/api/users/${userId}`);
         fetchUsers();
       } catch (error) {
         toast.error('Error deleting user');

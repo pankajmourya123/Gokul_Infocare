@@ -1,4 +1,4 @@
-import express from 'express'
+import express, { response } from 'express'
 import { errorMiddleware } from './middlewares/error.js';
 import user from "./routes/users.js";
 import cors from 'cors';
@@ -15,9 +15,18 @@ const corsOptions = {
 
 app.use("/api/users", user);
 
-app.get("/",(req,res)=>{
-  res.send("HELOO")
-})
+app.get("/", (req, res) => {
+  res.json({
+    message: "Hello, Welcome!",
+    routes: {
+      "create user (POST)": "https://gokul-infocare.onrender.com/api/users/create",
+      "update user (PUT)": "https://gokul-infocare.onrender.com/api/users/:id",
+      "get all users (GET)": "https://gokul-infocare.onrender.com/api/users/",
+      "delete user (DELETE)": "https://gokul-infocare.onrender.com/api/users/:id"
+    }
+  });
+});
+
 
 
 app.use(errorMiddleware);
