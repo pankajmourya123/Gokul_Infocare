@@ -15,7 +15,9 @@ const corsOptions = {
 
 app.use("/api/users", user);
 
-
+app.get("/",(req,res)=>{
+  res.send("HELOO")
+})
 
 
 app.use(errorMiddleware);
