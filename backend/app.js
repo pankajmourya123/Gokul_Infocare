@@ -1,20 +1,24 @@
-import express, { response } from 'express'
+import express from 'express';
 import { errorMiddleware } from './middlewares/error.js';
 import user from "./routes/users.js";
 import cors from 'cors';
-const app=express();
-// Middleware to parse JSON
+
+const app = express();
+
+
 app.use(express.json());
+
+
 const corsOptions = {
-    origin: 'http://localhost:3000', 
-    origin:'https://gokul-infocare.vercel.app/',
+    origin: ['http://localhost:3000', 'https://gokul-infocare.vercel.app'], 
     methods: 'GET,POST,PUT,DELETE', 
-  };
-  
-  app.use(cors(corsOptions));
-  
+};
+
+app.use(cors(corsOptions));
+
 
 app.use("/api/users", user);
+
 
 app.get("/", (req, res) => {
   res.json({
@@ -29,6 +33,6 @@ app.get("/", (req, res) => {
 });
 
 
-
 app.use(errorMiddleware);
+
 export default app;
