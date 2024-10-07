@@ -44,6 +44,10 @@ const UserInfo = styled.div`
   flex: 1;
   margin-right: 20px;
   color: #555;
+
+  p {
+    margin: 5px 0;
+  }
 `;
 
 const Button = styled(motion.button)`
@@ -89,7 +93,11 @@ const UserList = ({ users, setEditUser, deleteUser }) => {
             whileHover={{ scale: 1.02 }}
           >
             <UserInfo>
-              {user.firstName} {user.lastName} ({user.email})
+              <p><strong>First Name:</strong> {user.firstName}</p>
+              <p><strong>Last Name:</strong> {user.lastName}</p>
+              <p><strong>Phone:</strong> {user.phone}</p>
+              <p><strong>Email:</strong> {user.email}</p>
+              <p><strong>Address:</strong> {user.address}</p>
             </UserInfo>
             <div>
               <Button
