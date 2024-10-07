@@ -95,7 +95,7 @@ const UserList = ({ users, setEditUser, deleteUser }) => {
             <UserInfo>
               <p><strong>First Name:</strong> {user.firstName}</p>
               <p><strong>Last Name:</strong> {user.lastName}</p>
-              <p><strong>Phone:</strong> {user.phone}</p>
+              <p><strong>Phone:</strong> {user.phoneNumber}</p>
               <p><strong>Email:</strong> {user.email}</p>
               <p><strong>Address:</strong> {user.address}</p>
             </UserInfo>
